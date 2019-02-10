@@ -40,7 +40,7 @@ namespace ProjectShare
             string firstrun = string.Empty;
             try
             {
-                string xmlfile = File.ReadAllText(@"C:\Program Files (x86)\Project Share\settings.xml");
+                string xmlfile = File.ReadAllText(@"C:\Program Files (x86)\Scearu\settings.xml");
                 XmlDocument xmldoc = new XmlDocument();
                 xmldoc.LoadXml(xmlfile);
                 XmlNodeList nodelsit = xmldoc.GetElementsByTagName("firstrun");
