@@ -1,0 +1,6 @@
+Thank you for looking into Scearu
+
+##important notes for building###
+This software is semi-portable, but you need a settings file at C:\Program Files (x86)\Scearu\settings.xml
+i have included a default settings file.
+Without it, it will throw an errror every time you load it, but will still work.
