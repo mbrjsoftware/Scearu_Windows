@@ -103,7 +103,7 @@ namespace ProjectShare
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://projectshare.io");
+            System.Diagnostics.Process.Start("https://scearu.mbrjsoftware.com");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

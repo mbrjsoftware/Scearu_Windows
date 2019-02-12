@@ -37,14 +37,14 @@ namespace ProjectShare
                 System.IO.File.Delete(targetPath + "setup.exe");
                 using (var client = new WebClient())
                 {
-                    client.DownloadFile("http://download.projectshare.io/setup.exe", targetPath + "setup.exe");
+                    client.DownloadFile("http://download.mbrjsoftware.com/scearusetup.exe", targetPath + "setup.exe");
                 }
                 backgroundWorker1.ReportProgress(-1);
                 Process.Start(targetPath + "setup.exe");
             }
             catch
             {
-                MessageBox.Show("An Error occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("We could not download the installer." + Environment.NewLine + "This is usually due to a network connection issue." + Environment.NewLine + "Please try again later.", "Failed to download installer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -60,6 +60,11 @@ namespace ProjectShare
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Environment.Exit(1);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -40,7 +40,7 @@ namespace ProjectShare
             string firstrun = string.Empty;
             try
             {
-                string xmlfile = File.ReadAllText(@"C:\Program Files (x86)\Scearu\settings.xml");
+                string xmlfile = File.ReadAllText(@"C:\Program Files (x86)\Scearu\configs\settings.xml");
                 XmlDocument xmldoc = new XmlDocument();
                 xmldoc.LoadXml(xmlfile);
                 XmlNodeList nodelsit = xmldoc.GetElementsByTagName("firstrun");
@@ -63,7 +63,7 @@ namespace ProjectShare
 
                 MessageBox.Show("Thank you for Downloading Scearu" + Environment.NewLine + "Before we begin, you should know Scearu is completely free," + Environment.NewLine + "as said in the license." + Environment.NewLine + "if you paid for this software, YOU SHOULD DEMAND YOUR MONEY BACK.", "A small note", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 XmlDocument doc = new XmlDocument();
-                doc.Load(@"C:\Program Files (x86)\Project Share\settings.xml");
+                doc.Load(@"C:\Program Files (x86)\Scearu\configs\settings.xml");
 
                 XmlNodeList aDateNodes = doc.SelectNodes("startup/firstrun");
                 foreach (XmlNode aDateNode in aDateNodes)
@@ -71,7 +71,7 @@ namespace ProjectShare
                     XmlAttribute DateAttribute = aDateNode.Attributes["firstrun"];
                     aDateNode.InnerText = "false";
                 }
-                doc.Save(@"C:\Program Files (x86)\Project Share\settings.xml"); 
+                doc.Save(@"C:\Program Files (x86)\Scearu\configs\settings.xml"); 
             }
                 
                 try
@@ -80,9 +80,9 @@ namespace ProjectShare
                     label6.Text = "Checking for updates";
                     using (var webClient = new System.Net.WebClient())
                     {
-                        result = webClient.DownloadString("http://download.projectshare.io/latest.txt");
+                        result = webClient.DownloadString("http://download.mbrjsoftware.com/version.txt");
                     }
-                    if (result != "b2.1.0")
+                    if (result != "1.0.1")
                     {
                         DialogResult wantupdate = MessageBox.Show("An update is available." + Environment.NewLine + "Do you want to install it?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                         if (wantupdate == DialogResult.Yes)
