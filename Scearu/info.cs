@@ -62,5 +62,10 @@ namespace ProjectShare
             license_notice licensething = new license_notice();
             var dialogResult = licensething.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/mbrjsoftware/Scearu_windows");
+        }
     }
 }
